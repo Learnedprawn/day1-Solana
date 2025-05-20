@@ -11,29 +11,36 @@ describe("day", () => {
 
   it("Input test", async () => {
     // Add your test here.
-    try {
-      const tx = await program.methods.limitRange(new anchor.BN(9)).rpc();
-      console.log("Your transaction signature", tx);
-    } catch (_err) {
-      assert.isTrue(_err instanceof AnchorError);
-      const err: AnchorError = _err;
-      const errMsg =
-        "a is too small";
-      assert.strictEqual(err.error.errorMessage, errMsg);
-      console.log("Error number:", err.error.errorCode.number);
-    }
+    // try {
+    //   const tx = await program.methods.limitRange(new anchor.BN(9)).rpc();
+    //   console.log("Your transaction signature", tx);
+    // } catch (_err) {
+    //   assert.isTrue(_err instanceof AnchorError);
+    //   const err: AnchorError = _err;
+    //   const errMsg =
+    //     "a is too small";
+    //   assert.strictEqual(err.error.errorMessage, errMsg);
+    //   console.log("Error number:", err.error.errorCode.number);
+    // }
 
-    try {
-      const tx = await program.methods.limitRange(new anchor.BN(101)).rpc();
-      console.log("Your transaction signature", tx);
-    } catch (_err) {
-      assert.isTrue(_err instanceof AnchorError);
-      const err: AnchorError = _err;
-      const errMsg =
-        "a is too big";
-      assert.strictEqual(err.error.errorMessage, errMsg);
-      console.log("Error number:", err.error.errorCode.number);
-    }
+    // try {
+    //   const tx = await program.methods.limitRange(new anchor.BN(101)).rpc();
+    //   console.log("Your transaction signature", tx);
+    // } catch (_err) {
+    //   assert.isTrue(_err instanceof AnchorError);
+    //   const err: AnchorError = _err;
+    //   const errMsg =
+    //     "a is too big";
+    //   assert.strictEqual(err.error.errorMessage, errMsg);
+    //   console.log("Error number:", err.error.errorCode.number);
+    // }
+    it("Is initialized!", async () => {
+    // Add your test here.
+    const tx = await program.methods.initialize("name", "Bob").rpc();
+    console.log("Your transaction signature", tx);
+});
+
+
   });
 });
 

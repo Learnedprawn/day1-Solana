@@ -13,7 +13,7 @@ pub mod day {
         if a > 100 {
             return err!(MyError::AisTooBig);
         }
-        msg!("Result = {}", a);
+        msg!("Result changes = {}", a);
         Ok(())
     }
 }
@@ -28,4 +28,30 @@ pub enum MyError {
     #[msg("a is too small")]
     AisTooSmall,
 }
+
+// use anchor_lang::prelude::*;
+
+// declare_id!("53hgft52DHUKMPHGu1kusuwxFGk2T8qngwSw2SyGRNrX");
+
+// #[program]
+// pub mod day {
+//     use super::*;
+//         // Import HashMap library
+//     use std::collections::HashMap;
+
+//     pub fn initialize(ctx: Context<Initialize>, key: String, value: String) -> Result<()> {
+//         // Initialize the mapping
+//         let mut my_map = HashMap::new();
+
+//         // Add a key-value pair to the mapping
+//         my_map.insert(key.to_string(), value.to_string());
+
+//         // Log the value corresponding to a key from the mapping
+//         msg!("My name is {}", my_map[&key]);
+
+//         Ok(())
+//     }
+// }
+
+
 
